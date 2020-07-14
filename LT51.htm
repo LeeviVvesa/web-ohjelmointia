@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lisätehtävä 51</title>
+    <!--Leevi Vehreävesa
+    51. Tee Javascript:llä funktio, joka tarkistaa onko käyttäjä syöttänyt osoitteen oikein. 
+    Osoite pitää olla muodossa "Opistotie 2, 70100, Kuopio". Jos osoite on oikein, 
+    palauttaa funktio true, muuten false.  Tee lisäksi funktio, joka käyttää hyväksi 
+    em. tarkistusfunktiota ja tulostaa osoitteen muodossa "Lähiosoite on Opistotie 2 
+    ja postinumero on 70100 ja postitoimipaikka 70100".
+    -->
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+        let osoite = "Opistotie 2, 70100, Kuopio"; //tässä leikitään, että käyttäjän syöte
+
+        function tarkasta(osoite) {
+            let k = "Opistotie 2, 70100, Kuopio"; //syötteen pitäisi vastata tätä
+            if (osoite = k) {
+                return true;
+            }                           //jos vastaa, palautuu true, muuten false
+            else {
+                return false;
+            }
+            
+        } // tämän osan uskoisin olevan oikein
+        
+
+        function tulosta() {
+            if (tarkasta() == true)
+            {
+                console.log("Lähiosoite on Opistotie 2 ja postinumero on 70100 ja postitoimipaikka 70100");
+            }
+            else {
+                console.log("Osoite meni väärin")
+            }
+        }
+        tarkasta(osoite);
+        tulosta();
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="text">Konsolissa tuloste</div>
+
+</body>
+
+</html>

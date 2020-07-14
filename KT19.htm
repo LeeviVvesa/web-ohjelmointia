@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>KT19</title> 
+
+    <!---LEEVI VEHREÄVESA kt19-->
+    
+
+<script> 
+    
+    let taulukko = [];
+    taulukko.push(10);
+    taulukko.push(2);
+    taulukko.push(303);
+    taulukko.push(45);
+
+    function laskenta(taulukko)
+    {
+        let pieni = 1000;
+        let suuri = -1000;
+        let koko = taulukko.length;
+        let summa = 0;
+        let keskiarvo = 0;
+    
+        for(i = 0; i<koko; i++)
+        {
+            if(taulukko[i]<pieni)
+            {
+                pieni = taulukko[i];     
+            }
+            if(taulukko[i]>suuri)
+            {
+                suuri = taulukko[i];        
+            }
+            
+
+        } 
+        for(i=0; i< koko; i++)
+        {
+            summa = summa + taulukko[i];
+
+        }
+        keskiarvo = summa / koko;
+
+        console.log(pieni);
+        console.log(suuri);
+        console.log(summa);
+        console.log(keskiarvo);
+            
+    }
+    laskenta(taulukko);
+    
+
+</script>
+</head>
+
+<body>  
+
+<p>Taulukko consolissa</p>
+
+
+
+</body>
+</html>

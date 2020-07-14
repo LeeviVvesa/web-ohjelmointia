@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>KT26 Vehreävesa</title>
+    <!--26. Tee HTML-sivu, jossa käyttäjä voi rekisteröityä tapahtumaan. 
+    Kysy käyttäjältä nimi ja osoite. Kun käyttäjä painaa "Rekisteröidy" nappia, 
+    tarkista ensin, että käyttäjä on syöttänyt kenttiin arvot (ja että nimessä ja 
+    osoitteessa on vähintään 5 merkkiä). 
+    HUOM! Käyttäjä voi syöttää myös pelkkiä välilyöntejä tai välilyöntejä 
+    esim. nimen alkuun/loppuun -> poista nämä turhat välilyönnit alusta ja lopusta.
+    
+    Jos arvot ovat väärin, näytä näytöllä jossain kentässä teksti "Nimi väärin" 
+    tai "Osoite väärin" tai "Nimi ja osoite väärin" (riippuen tietysti mikä meni väärin). 
+    Jos tiedot ovat oikein, näytä syötetyt tiedot form:n alla olevassa div-lohkossa 
+    (lisää lohkoon joku elementti, jossa näytät tiedot). 
+    Huomaa että jos tiedot olivat aluksi väärin ja käyttäjä korjaa ne, 
+    täytyy virheilmoituksen hävitä näytöltä (jossain vaiheessa)-->
+
+    <style>
+        #div_1 {
+            display: grid;
+            height: 400px;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 40px;
+
+        }
+    </style>
+
+    <script>
+
+        function tarkasta() {
+            let nimi = String(document.getElementById("name").value);
+            let osoite = String(document.getElementById("address").value);
+
+            let nimitrim = nimi.trim();
+            let osoitetrim = osoite.trim();
+
+            if (nimitrim == "" && osoitetrim == "" || nimitrim == null && osoitetrim == null) {
+                alert("Cmoon, nimi JA osoitekenttä ovat tyhjiä");
+            }
+        
+            else if (nimitrim == "" || nimitrim == null) {
+                alert("Nimikenttä on tyhjä");
+            }
+
+            else if (osoitetrim == "") {
+                alert("Osoitekenttä on tyhjä");
+            }
+
+            else {
+                document.getElementById("tiedot").innerHTML = "Nimi:" + nimitrim + " Osoite:" + osoitetrim;
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="div_1">
+        <div style="background-color:springgreen; text-align: center;">
+            <h4 style="color: palevioletred;">Rekisteröidy kissanäyttelyyn tästä:</h4>
+            <form>
+                NIMI: <input type="text" id="name">
+                OSOITE: <input type="text" id="address">
+            </form>
+            <hr>
+            <button onclick="tarkasta()">REKISTERÖIDY</button>
+        </div>
+
+        <div style="background-color:peachpuff; text-align: center;">
+            <form>
+                <div>
+                    <p id="tiedot"></p>
+                    <p>Tyhjistä kentistä pitäisi tulla virheilmoitus alerttina</p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

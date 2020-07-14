@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>L1</title>
+    <!--Leevi Vehreävesa-->
+
+    <style>
+        div.dotted {
+            border-style: dotted;
+            height: 200px;
+        }
+
+        p.dotted {
+            border-style: dotted;
+            height: 200px;
+        }
+
+        #tulos {
+            display: block;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+        function laskeYhteen() {
+            let x = Number(document.getElementById("x").value);
+            let y = Number(document.getElementById("y").value);
+
+            if (isNaN(x)) {
+                document.getElementById("tulos").innerHTML = "Ei numeroa syötteessä 1";
+                return false;
+            }
+            if (isNaN(y)) {
+                document.getElementById("tulos").innerHTML = "Ei numeroa syötteessä 2";
+                return false;
+            }
+            else {
+                document.getElementById("tulos").innerHTML = x + y;
+                return false;
+            }
+        }
+
+        function valikko() {
+            
+            let eka = String(document.getElementById("x").value);
+            let toka = String(document.getElementById("y").value);
+
+            let i = Number(document.getElementById("x").value);
+            let j = Number(document.getElementById("y").value);
+
+            let kolmas = i + j;
+
+            if (isNaN(kolmas))
+            {
+                let x = document.getElementById("lasku");
+                let option = document.createElement("option");
+                option.text = "Syötteessä on virhe";
+                x.add(option, x[1]);  
+            }
+            else
+            {
+                let x = document.getElementById("lasku");
+                let option = document.createElement("option");
+                option.text = (eka + "+" + toka + "=" + kolmas);
+                x.add(option, x[1]);  
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div style="background-color: salmon" class="dotted">
+        
+        <div>
+            Eka numero: <input id="x">
+        </div>
+        <hr>
+        <div>
+            Toka numero: <input id="y">
+        </div>
+        <div>
+            <button onclick="laskeYhteen(), valikko()"><mark>Laske yhteen</mark></button>
+        </div>
+
+        <p id="tulos" style="background-color: red"></p>
+
+        <div>
+            <form>
+                <select id="lasku">
+                    <option>Option</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

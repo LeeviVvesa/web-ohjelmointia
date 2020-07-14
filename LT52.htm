@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lisätehtävä 52</title>
+    <!--Leevi Vehreävesa
+    52. Tee funktio, joka saa parametrinaan kokonaisluku taulukon. 
+    Taulukossa on sekä positiivisia että negatiivisia lukuja. 
+    Funktio laskee yhteen negatiiviset luvut ja tulostaa ne sekä positiiviset luvut ja tulostaa ne. 
+    -->
+
+    <style>
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+
+        let numerot = [5, -4, 9, -11, 12, 17, -22, 1]; //taulukko
+
+        function laskeYhteen(numerot) {
+            let sum = 0;
+            let sum1 = 0;
+            for (let i = 0; i < numerot.length; i++) {
+                if (numerot[i] > 0) {
+                    sum += numerot[i];
+                }                                   //erotellaan + ja - luvut omiin muuttujiin
+                else if (numerot[i] < 0) {
+                    sum1 += numerot[i];
+                }
+            }
+            console.log("Positiivisten lukujen summa: " + sum);     //tulostetaan konsoliin summat
+            console.log("Negatiivisten lukujen summa: " + sum1);
+        }
+        
+        laskeYhteen(numerot);
+    </script>
+
+</head>
+
+<body>
+    <p>Tehtävä konsolissa</p>
+
+</body>
+
+</html>

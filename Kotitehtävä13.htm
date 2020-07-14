@@ -1,0 +1,139 @@
+<!doctype html>
+<title>Flexbox13</title>
+<style>
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        font-weight: bold;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .wrapper>* {
+        padding: 10px;
+        flex: 1 100%;
+        margin: 3px;
+    }
+
+    .ylapalkki {
+        background: gold;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .alapalkki {
+        background: gold;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .keski {
+        background: gold;
+        height: 370px;
+        line-height: 70px;
+        flex-flow: row;
+        align-content: center;
+        justify-items: center;
+        
+    }
+
+    .vasensivu {
+        background: gold;
+        line-height: 50px;
+    }
+
+    .oikeasivu {
+        background: gold;
+        line-height: 100px;
+    }
+
+    p.kolme, p.nelja {
+        border-style: solid;
+        border-width: 1px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+        flex-flow: row;
+    }
+    .flex-container > div {
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        margin: 5px;
+    }
+
+    @media all and (min-width: 600px) {
+        .vasensivu, .oikeasivu {
+            flex: 1 0 0;
+        }
+    }
+
+    @media all and (min-width: 800px) {
+        .keski {
+            flex: 3 0px;
+        }
+
+        .vasensivu {
+            order: 1;
+        }
+
+        .keski {
+            order: 2;
+        }
+
+        .oikeasivu {
+            order: 3;
+        }
+
+        .alapalkki {
+            order: 4;
+        }
+    }
+
+    body {
+        padding: 2px;
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <header class="ylapalkki">Tervetuloa Savoniaan</header>
+        <article class="keski">
+            <div class="flex-container">
+                <div>
+                    <p>Jottain tekstiä tässä pitää olla ja niinhän tässä onkin ja jatkuuvaaaaaaaaaannnnnn felxiboxi flexiboxiflexiboxiflexiboxi joo jojooo oojojoj joj jo jojoj oj ojo j ojo </p>
+                </div>
+                <div>
+                    <p>Jottain muuta tekstiä lissää ei jaksa kopioida mistään wikipediasta joten mennään tällä ja boxi flexi flexi xfelix flexi exil efilx lifex xflie exlif exlefi ixefli</p>
+                </div>
+            </div>
+        </article>
+        
+        <aside class="vasensivu">
+            <article>
+                <list><a href="https://portal.savonia.fi/amk/fi/opiskelijalle">Opiskelu</a>
+                </list><br>
+                <list><a href="https://portal.savonia.fi/amk/fi/tutustu-savoniaan/yhteystiedot/microkadun-kampus/lounasravintola-ja-kahvilapalvelut">Ruokailu</a>
+                </list><br>
+                <list><a href="https://portal.savonia.fi/amk/fi/hakijalle/savonia-code-academy">IT</a>
+                </list><br>
+                <list><a href="https://portal.savonia.fi/amk/fi/tutustu-savoniaan/organisaatio-ja-johtaminen/organisaatio/hallinto-ja-korkeakoulupalvelut">Hallinto</a>
+                </list><br>
+                <list><a href="https://portal.savonia.fi/amk/fi/opiskelijalle/ohjeita-uudelle-opiskelijalle">Vapaa-aika</a>
+                </list><br>
+                <list><a href="https://fi.wikipedia.org/wiki/Wikipedia:Etusivu">Muu</a>
+                </list><br>
+            </article>
+        </aside>
+        <aside class="oikeasivu">
+            <p class="kolme">Mainoksia</p><br>
+            <p class="nelja">Mainoksia</p>
+        </aside>
+        <footer class="alapalkki">Yhteystiedot</footer>
+    </div>
+
+
+</body>

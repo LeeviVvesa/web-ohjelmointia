@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+34. Tee html-sivu, jolla käyttäjän pitää rekisteröityä ennenkuin hän voi käyttää sivua. 
+Kun sivu avautuu, ei sivulla näy mitään muuta kuin Rekisteröidy-nappi. 
+Nappia painamalla avautuu dialogi (otsikossa lukee "Rekisteröityminen"), 
+jossa käyttäjältä kysytään nimi ja tunnus jQuery UI:n dialogin avulla. 
+Jos käyttäjä syötti molemmat arvot ja kenttien datan pituus on vähintään 5 merkkiä, 
+on data oikein ja dialogi voidaan sulkea Save-napilla 
+(dialogi voidaan sulkea myös Peruuta-napilla tallentamatta tietoja). 
+Jos data oli väärin, ei dialogia voi sulkea ja käyttäjälle näytetään virheviesti jotenkin.
+Kun rekisteröityminen onnistui, suljetaan dialogi, 
+ja näytetään dialogin alla olevan sivun sisältö. 
+Sivun ylälaidassa näytetään rekisteröityneen käyttäjän tiedot <p>-elementissä.-->
+
+
+    <title>KT34</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function () {
+            $("#dialogi").dialog({
+                autoOpen: false,
+
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                },
+                buttons: {
+
+                    "Save": function () {
+                        if ($("nimi").val() < 5) {
+                            alert("Nimi on tyhjä/alle 5  merkkiä");
+                        }
+                        else {
+                            $(this).dialog("close");
+                        }
+
+                    },
+                    Cancel: function () {
+                        $(this).dialog("close");
+                    }
+
+                    
+                }
+            });
+
+            $("#avaa").on("click", function () {
+                $("#dialogi").dialog("open");
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="dialogi" title="Rekisteröidy">
+        <div>
+            <p>Nimi: <input type="text" id="nimi"></p>
+            <p>Tunnus: <input type="text" id="tunnus"></p>
+        </div>
+    </div>
+    <div>
+        <p id="tiedot">On tämä ainakin yritys..</p>
+    </div>
+
+    <button id="avaa">Rekisteröidy</button>
+</body>
+
+</html>

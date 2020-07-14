@@ -1,0 +1,42 @@
+<!doctype html>
+<title>Kotitehtävä 14</title>
+<style>
+    .flex-container {
+        background: rgb(194, 192, 192);
+        height: 150px;
+        display: flex;
+        align-content: center;
+        line-height: 130px;
+        margin: 1px;
+    }
+    .flex-container > div {
+        align-content: center;
+    }
+    .vasenboxi {
+        align-content: center;
+        text-align: center;
+        justify-self: left;
+        margin: 5px;
+    }
+    .oikeaboxi {
+        margin-left: auto;
+        justify-self: right;
+    }
+
+</style>
+
+<body>
+
+    <div class="flex-container">
+        <div class="vasenboxi">
+            <a style="color:blue;" href="https://portal.savonia.fi/amk/">Savonia (linkki)</a>
+            <select name="jotain">jotain<option value="valitse">Valitse</option></select>
+        </div>
+        <div class="oikeaboxi">
+            <input type="text" name="Search" placeholder="Search"><button>Search</button>
+        </div>
+
+    </div>
+
+
+</body>

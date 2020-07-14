@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kotitehtävä 16</title>
+    <style>
+
+    .item1 { grid-area: header; }
+    .item2 { grid-area: main; }
+    .item3 { grid-area: keski; }
+    .item4 { grid-area: alakeski; }
+    .item5 { grid-area: ala; }
+    .item6 { grid-area: submit; }
+    
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+        'header header header header header header'
+        'main main main main main main'
+        'keski keski keski keski keski keski'
+        'alakeski alakeski alakeski alakeski alakeski alakeski'
+        'ala ala ala ala ala ala'
+        'submit submit submit submit submit submit';
+        grid-gap: 15px;
+        background-color: aqua;
+        padding: 15px;
+    }
+    .grid-container > div, tr, td {
+        background-color: lightcoral;
+        margin: 5px;
+        padding: 20px 0;
+        font-size: 25px;
+        text-align: center;
+        justify-content: center;
+    }
+    .item3 {
+        height: 100px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    </style>
+</head>
+
+<body>
+
+    
+
+<div class="grid-container">
+    <div class="item1">
+        <div>
+            <form action="http://webd.savonia.fi/home/ktkoiju/test.php" method="GET">
+                <tr>
+                    <td>NIMI: <input type="text" name="etunimi" /></td>
+                </tr>
+                <tr>
+                    <td>VUOSIKURSSI: <input type="password" name="vuosikurssi" /></td>
+                </tr>
+            </form>
+        </div>
+    </div>
+    <div class="item2">
+        
+            <form>
+                <tr>          
+                    <td>KURSSIN NIMI: <select name="Kurssin nimi">
+                        <option value="HÖPÖ1">HÖPÖ1</option>
+                        <option value="HÖPÖ2">HÖPÖ2</option>
+                    </td>
+                </tr>
+            </form><br>
+        
+    <div class="item3">
+        
+            <form>
+                <tr>        
+                    <td>KURSSIN TYYPPI: <select name="Kurssin tyyppi">
+                        <option value="YÖKURSSI">YÖ-kurssi (tässä pitäisi olla myös alasvetovalikko, mutta en ymmärrä miksei se toimi</option>
+                        <option value="EIKOSKAAN">EI KOSKAAN-kurssi</option>
+                    </td>
+                </tr>
+            </form>
+        
+    </div>            
+    <div class="item4">
+        <div>
+            <form>
+                <tr>           
+                    <td>SUKUPUOLI: <br>
+                        <input type="radio" name="sukupuoli" value="mies" checked> Male<br>
+                        <input type="radio" name="sukupuoli" value="nainen"> Female<br>
+                        <input type="radio" name="sukupuoli" value="muu"> Other  
+                    </td>
+                </tr>
+            </form>
+        </div>
+    <div class="item5">
+        <div>
+            <form>
+                <tr>
+                    <td>HARRASTUKSET: <br>
+                        <input type="checkbox" name="hobbies1" value="Potkunyrkkeily"> Potkunyrkkeily
+                        <input type="checkbox" name="hobbies2" value="Kalastus"> Kalastus
+                        <input type="checkbox" name="hobbies3" value="Jalkapallo" checked> Jalkapallo
+                        <input type="checkbox" name="hobbies4" value="Syöminen"> Syöminen
+                    </td>
+                </tr>
+            </form>
+        </div>
+    </div>
+    <div class="item6">
+        <div>
+            <td><input type="Submit" name="send" value="Lähetä" /></td>
+            <td></td>
+        </div>
+    </div>
+        
+</div>
+
+
+</body>
+
+</html>

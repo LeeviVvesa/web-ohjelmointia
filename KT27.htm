@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>KT27 Vehreävesa</title>
+    <!--
+    27. Lisää edelliseen tehtävään alasvetovalikko "Ammatti", jonne lisäät muutaman ammatin. 
+    Lisää myös checkbox:t "Erityisruokavalio", "Tarvitsee majoituksen" ja "Opiskelija". 
+    Tarkista että käyttäjä on valinnut jonkun ammatin. 
+    Kun käyttäjä painaa "Rekisteröidy" nappia, näytä div-lohkossa myös nämä uudet valinnat 
+    (mieti miten muotoilet checknbox:ien valinnat, niitä ei ole siis pakko valita).
+
+    -->
+
+    <style>
+        #div_1 {
+            display: grid;
+            height: 400px;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 40px;
+
+        }
+    </style>
+
+    <script>
+
+        function tarkasta() {
+            let nimi = String(document.getElementById("name").value);
+            let osoite = String(document.getElementById("address").value);
+            let ammatti = document.querySelector(".ammatit").value;
+
+            let nimitrim = nimi.trim();
+            let osoitetrim = osoite.trim();
+
+            if (nimitrim == "" && osoitetrim == "" || nimitrim == null && osoitetrim == null) {
+                alert("Cmoon, nimi JA osoitekenttä ovat tyhjiä");
+            }
+
+            else if (nimitrim == "" || nimitrim == null) {
+                alert("Nimikenttä on tyhjä");
+            }
+
+            else if (osoitetrim == "") {
+                alert("Osoitekenttä on tyhjä");
+            }
+
+            else {
+                document.getElementById("tiedot").innerHTML = "Nimi:" + nimitrim + " Osoite:" + osoitetrim;
+                document.getElementById("tiedot2").innerHTML = "Ammatti: " + ammatti;
+            }
+            myFunction();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="div_1">
+        <div style="background-color:springgreen; text-align: center;">
+
+            <h2 style="color: palevioletred;"><b>Rekisteröidy kissanäyttelyyn tästä:</b></h2>
+            <div>
+                <form>
+                    NIMI: <input type="text" id="name">
+                    OSOITE: <input type="text" id="address">
+                </form>
+            </div>
+            <hr>
+            <div>
+                <form>
+                    Valitse ammattisi:<select class="ammatit">
+                        <option value="Nyrkkeilijä">Nyrkkeilijä</option>
+                        <option value="Taiteilija">Taiteilija</option>
+                        <option value="Kalastaja">Kalastaja</option>
+                        <option value="ATK-tukihenkilö">ATK-tukihenkilö</option>
+                    </select>
+                </form>
+            </div>
+            <hr>
+            <div>
+                <form>
+                    Erityisruokavalio <input type="checkbox" id="ruokavalio" value="Erityisruokavalio">
+                </form>
+                <form>
+                    Tarvitsee majoituksen <input type="checkbox" id="majoitus" value="Majoitus">
+                </form>
+                <form>
+                    Opiskelija <input type="checkbox" id="opiskelija" value="Opiskelija">
+                </form>
+            </div>
+            <hr>
+            <button onclick="tarkasta()">REKISTERÖIDY</button>
+        </div>
+
+        <div style="background-color:peachpuff; text-align: center;">
+            <form>
+                <div>
+                    <p id="tiedot"></p>
+                    <p id="tiedot2"></p>
+                    <p id="tiedot3"></p>
+                    <p id="tiedot4"></p>
+                    <p id="tiedot5"></p>
+                    <p>Tyhjistä kentistä pitäisi tulla virheilmoitus alerttina</p>
+                    <p>Checkboxit rekisteröityy kerran, täytyy päivittää sivu, mikäli haluaa muuttaa valintaa</p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function myFunction() {
+            
+            let checkBox = document.getElementById("ruokavalio");
+            let text = document.getElementById("tiedot3");
+
+            if (checkBox.checked == true) {
+                document.getElementById("tiedot3").innerHTML = "Erityisruokavalio";
+            } else {
+                text.style.display = "none";
+            }
+
+            let checkBox1 = document.getElementById("majoitus");
+            let text1 = document.getElementById("tiedot4");
+
+            if (checkBox1.checked == true) {
+                document.getElementById("tiedot4").innerHTML = "Tarvitsee majoituksen";
+            } else {
+                text1.style.display = "none";
+            }
+
+            let checkBox2 = document.getElementById("opiskelija");
+            let text2 = document.getElementById("tiedot5");
+
+            if (checkBox2.checked == true) {
+                document.getElementById("tiedot5").innerHTML = "Opiskelija";
+            } else {
+                text2.style.display = "none";
+            }
+        } 
+    </script>
+
+
+
+</body>
+
+</html>

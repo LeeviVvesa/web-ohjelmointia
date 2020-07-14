@@ -1,0 +1,104 @@
+<!doctype html>
+<title>Kotitehtävä 12</title>
+<style>
+    body {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "nav article ads"
+            "footer footer footer";
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 2px;
+        height: 80vh;
+        margin: 1px;
+    }
+    
+
+    div {
+        padding: 20px;
+        background: gold;
+        margin: 10px;
+        text-align: center;
+        margin: 5px;
+        padding: 2px;
+        font-size: 20px;
+        border-color: black;
+        
+        
+    }
+
+    #keskivasen #keskioikea {
+        grid-template-areas:
+            "keskivasen keskioikea";
+        display: grid;
+        
+    }
+
+    #otsikko {
+        grid-area: header;
+    }
+
+    #alin {
+        grid-area: footer;
+    }
+
+    #keskilohko {
+        grid-area: article;
+        text-align: left;
+
+    }
+
+    #vasenkeski {
+        grid-area: nav;
+        line-height: 40px;
+
+    }
+
+    #oikeakeski {
+        grid-area: ads;
+        text-align: left;
+    }
+</style>
+
+<body>
+
+    <div id="otsikko">Tervetuloa Savoniaan
+    </div>
+
+        
+            <div id="keskilohko">
+                <div>
+                    <div id="keskivasen">
+                
+                        <p>Valitse vasemmalta listalta jotain</p>
+                    </div>
+                    <div id="keskioikea">
+                
+                        <p>Valitse vasemmalta listalta jotain</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="vasenkeski">
+                <table>
+                    <list><a href="https://portal.savonia.fi/amk/fi/opiskelijalle">Opiskelu</a></list><br>
+                    <list><a href="https://portal.savonia.fi/amk/fi/tutustu-savoniaan/yhteystiedot/microkadun-kampus/lounasravintola-ja-kahvilapalvelut">Ruokailu</a></list><br>
+                    <list><a href="https://portal.savonia.fi/amk/fi/hakijalle/savonia-code-academy">IT</a></list><br>
+                    <list><a href="https://portal.savonia.fi/amk/fi/tutustu-savoniaan/organisaatio-ja-johtaminen/organisaatio/hallinto-ja-korkeakoulupalvelut">Hallinto</a></list><br>
+                    <list><a href="https://portal.savonia.fi/amk/fi/opiskelijalle/ohjeita-uudelle-opiskelijalle">Vapaa-aika</a></list><br>
+                    <list><a href="https://fi.wikipedia.org/wiki/Wikipedia:Etusivu">Muu</a></list><br>
+                </table>
+            </div>
+
+            <div id="oikeakeski">Mainoksia</div>
+        
+
+    
+    <div id="alin">Yhteystiedot</div>
+
+
+
+
+</body>

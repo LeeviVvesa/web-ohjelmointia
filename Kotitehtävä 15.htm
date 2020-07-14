@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kotitehtävä 15</title>
+    <style>
+    .item1 { grid-area: hkl; }
+    .item2 { grid-area: header; }
+    .item3 { grid-area: muu;}
+    .item4 { grid-area: amk; }
+    .item5 { grid-area: yo; }
+    .item6 { grid-area: age; }
+    .item7 { grid-area: nuori; }
+    .item8 { grid-area: ekalink; }
+    .item9 { grid-area: tokalink; }
+    .item10 { grid-area: kolmaslink; }
+    .item11 { grid-area: keski; }
+    .item12 { grid-area: ekalist; }
+    .item13 { grid-area: tokalist; }
+    .item14 { grid-area: kolmaslist; }
+    .item15 { grid-area: vanha; }
+    .item16 { grid-area: ekatekst; }
+    .item17 { grid-area: tokatekst; }
+    .item18 {grid-area: kolmastekst; }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+        'hkl hkl header header header'
+        'hkl hkl muu amk yo'
+        'age nuori ekalink tokalink kolmaslink'
+        'age keski ekalist tokalist kolmaslist'
+        'age vanha ekatekst tokatekst kolmastekst';
+        grid-gap: 5px;
+        background-color: aqua;
+        padding: 5px;
+        justify-content:stretch;
+        
+    }
+    .grid-container > div {
+        background-color: lightcoral;
+        margin: 5px;
+        text-align: center;
+        justify-content: center;
+        padding: 20px 0;
+        font-size: 25px;
+    }
+    
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="item1">Henkilöstö</div>
+
+        <div class="item2">Koulutus</div>
+        <div class="item3">Muu</div>
+        <div class="item4">Ammattikorkeakoulu</div>
+        <div class="item5">Yliopisto</div>
+        <div class="item6">IKÄ</div>
+        <div class="item7">- 30</div>
+        <div class="item8"><a href="https://www.tekniikkatalous.fi/">Linkki1</a></div>
+        <div class="item9"><a href="https://coinmarketcap.com/">Linkki2</a></div>
+        <div class="item10"><a href="https://peluuri.fi/fi">Linkki3</a></div>
+        <div class="item11">30 - 50</div>
+        <div class="item12">
+            <li>Terveys</li>
+            <li>Hyvinvointi</li>
+            <li>Raha</li>
+        </div>
+        <div class="item13">
+            <li>Motivaatio</li>
+            <li>Voima</li>
+            <li>Pöhinä</li>
+        </div>
+        <div class="item14">
+            <li>Paistettu kuha</li>
+            <li>Pizza:feta, oliivi, sipuli</li>
+            <li>Tofuwokki</li>
+        </div>
+        <div class="item15">50 - </div>
+        <div class="item16"><b><em>vaikeeta on</em></b></div>
+        <div class="item17"><b><em>reeniä tarttee</em></b></div>
+        <div class="item18"><b><em>ehkä se siitä</em></b></div>
+
+    </div>
+
+</body>
+
+</html>

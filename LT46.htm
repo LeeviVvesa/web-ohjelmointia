@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lisätehtävä 46</title>
+    <!--Leevi Vehreävesa-->
+
+    <style>
+        div.dotted {border-style: dotted;}
+        p.dotted {border-style: dotted;}
+    </style>
+
+</head>
+
+<body>
+
+    <div style="background-color: rebeccapurple" class="dotted">
+        <div>
+            Eka numero: <input id="x">
+        </div>
+        <hr>
+        <div>
+            Toka numero: <input id="y">
+        </div>
+
+        <button id="laske"><mark>Laske yhteen</mark></button>
+    </div>
+    <p id="tulos" style="background-color: red" class="dotted"></p>
+
+    <script>
+        function laskeYhteen() {
+            var x = Number(document.getElementById('x').value);
+            var y = Number(document.getElementById('y').value);
+
+            if (isNaN(x)) {
+                document.getElementById('tulos').innerHTML = "Ei numero";
+                return false;
+            }
+            if (isNaN(y)) {
+                document.getElementById('tulos').innerHTML = "Ei numero";
+                return false;
+            }
+            else {
+            document.getElementById('tulos').innerHTML = x + y;
+            return false;
+            }
+        }
+    
+            document.getElementById('laske').addEventListener('click', laskeYhteen);
+
+    </script>
+
+</body>
+
+</html>

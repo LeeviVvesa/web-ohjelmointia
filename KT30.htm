@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KT30</title>
+
+
+    <style>
+        #grid_1 {
+            display: grid;
+            height: 400px;
+            grid-template-columns: 1fr 1fr;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="grid_1">
+
+        <div style="background-color: yellow; text-align: center; font-size: 50px;">
+
+            <div style="margin-top: 5%;"><a href="#" onclick="yhteystiedot();">Yhteystiedot</a></div>
+
+            <div style="margin-top: 5%;"><a href="#" onclick="rekisteroidy();">Rekisteröidy</a></div>
+
+            <div style="margin-top: 5%;"><a href="#" onclick="kuvat();">Kuvat</a></div>
+
+        </div>
+
+
+
+        <div id="div_0" style="background-color: navy">
+
+            <div id="div_1" style="font-size: 30px;"></div>
+            <div id="div_2" style="font-size: 30px;"></div>
+            <div id="div_3" style="font-size: 30px;"></div>
+
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function yhteystiedot() {
+            let a = document.querySelector("#div_1");
+            let b = document.querySelector("#div_2");
+            let c = document.querySelector("#div_3");
+            a.innerHTML = "Savonia-ammattikorkeakoulu / Savonia-ammattikorkeakoulu oy"
+            b.innerHTML = "Postiosoite: PL 6, 70201 KUOPIO"
+            c.innerHTML = "Käyntiosoite: Microkatu 1, 70210 KUOPIO"
+
+            a.style.marginLeft = "3%";
+            b.style.marginLeft = "3%";
+            c.style.marginLeft = "3%";
+
+            a.style.marginTop = "2%";
+            b.style.marginTop = "2%";
+            c.style.marginTop = "2%";
+        }
+
+        function rekisteroidy() {
+            let a = document.querySelector("#div_1");
+            let b = document.querySelector("#div_2");
+            let c = document.querySelector("#div_3");
+            let d = document.querySelector("#div_0");
+
+            a.innerHTML = ""
+            b.innerHTML = ""
+            c.innerHTML = ""
+
+
+            let aa = document.createElement("form");
+            d.appendChild(aa);
+
+            aa.appendChild(a);
+            aa.appendChild(b);
+            aa.appendChild(c);
+
+            let ab = document.createElement("input");
+            let ac = document.createElement("input");
+            let ad = document.createElement("input");
+
+            a.appendChild(ab);
+            b.appendChild(ac);
+            c.appendChild(ad);
+
+            ab.placeholder = "Nimi"
+            ac.placeholder = "Osoite"
+            ad.placeholder = "Puhelinnumero"
+
+            a.style.marginLeft = "3%";
+            b.style.marginLeft = "3%";
+            c.style.marginLeft = "3%";
+
+            a.style.marginTop = "2%";
+            b.style.marginTop = "2%";
+            c.style.marginTop = "2%";
+
+        }
+
+        function kuvat() {
+            let a = document.querySelector("#div_1");
+            let b = document.querySelector("#div_2");
+            let c = document.querySelector("#div_3");
+            let d = document.createElement("img");
+            let e = document.createElement("img");
+
+            a.innerHTML = ""
+            b.innerHTML = ""
+            c.innerHTML = ""
+
+            a.style.marginLeft = "33%";
+            b.style.marginLeft = "33%";
+            c.style.marginLeft = "3%";
+
+            a.style.marginTop = "5%";
+            b.style.marginTop = "5%";
+            c.style.marginTop = "2%";
+
+            a.appendChild(d);
+            b.appendChild(e);
+
+            d.src = "kuvagreen.png";
+            e.src = "kuvapink.png";
+
+            d.addEventListener("mouseover", function () { this.src="ukkeli.png"; });
+            e.addEventListener("mouseover", function () { this.src="elukka.png"; });
+            d.addEventListener("mouseout", function () { this.src="kuvagreen.png"; });
+            e.addEventListener("mouseout", function () { this.src="kuvapink.png"; });
+        }
+    </script>
+</body>
+
+</html>

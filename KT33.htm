@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+33. Lisää edelliseen tehtävään: käytä jQuery UI:n Autocomplete-komponenttia. 
+Käyttäjä voi syöttää kenttään kaupunkien nimiä (syntymäpaikka). 
+Serverillä on palvelu http://codez.savonia.fi/jussi/api/json_data.php, 
+jota voidaan käyttää kaupunkien hakemiseen. .-->
+
+
+    <title>KT33</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+        $.datepicker.regional['fi'] = {
+            monthNames: ['Tammikuu', 'Helmikuu', 'Maaliskuu', 'Huhtikuu', 'Toukokuu', 'Kesäkuu', 'Heinäkuu', 'Elokuu', 'Syyskuu', 'Lokakuu', 'Marraskuu', 'Joulukuu'],
+            monthNamesShort: ['T', 'He', 'Ma', 'H', 'T', 'K', 'H', 'E', 'S', 'L', 'M', 'J'],
+            dayNames: ['Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai', 'Sunnuntai'],
+            dayNamesShort: ['MA', 'TI', 'KE', 'TO', 'PE', 'LA', 'SU'],
+            dayNamesMin: ['MA','TI','KE','TO','PE','LA','SU'],
+            dateFormat: 'dd/mm/yy'
+        };
+
+        $.datepicker.setDefaults($.datepicker.regional['fi']);
+        $(function () {
+            $("#kalenteri").datepicker({
+                format: 'dd/mm/yy',
+                useCurrent: false,
+                showClose: true,
+                minDate: '1/1/1996',
+                maxDate: '31/12/2015',
+
+            });
+
+        });
+        
+        
+
+        $(function () {
+            $("#kaupunki").autocomplete({
+                source: "http://codez.savonia.fi/jussi/api/json_data.php",
+                minLength: 2,
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <p>Date: <input type="text" id="kalenteri" placeholder="Pvm:ää ei valittu" style="color: red;"></p>
+    </div>
+
+    <div>
+        <p>Kaupunki: <input type="text" id="kaupunki" placeholder="Valitse kaupunki"></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<!--LEEVI VEHREÄVESA-->
+<!--Lisätehtävät 4 ja 5-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>L4-5</title>
+
+    <script>
+        $(function () {
+
+            $("#p_button").button();
+
+            $("#p_button").click(function () {
+                $("#oma_dialog").dialog("open");
+            })
+
+            taulu = [];
+
+            function tarkasta(nimi) {     //Viedään nimi funktioon ja pieniin kirjaimiin ja palautetaan edellinen syötetty
+                let nimi2 = nimi.toLowerCase();
+
+                return taulu.indexOf(nimi2) != -1;
+            }
+
+            function lisaa() {
+
+                let nimi = $("#jotain").val(); // tämä val näköjään oli se mistä kiikasti, nyt toimii
+
+                if (nimi != "" && !tarkasta(nimi)) // tässä tarkastetaan onko nyt syötetty nimi eri kuin aikasemmin syötetyt
+                {
+                    taulu.push(nimi.trim().toLowerCase()); // tauluun lisätään nimi
+                    $("#urheilijat").append("<option>" + nimi + "</option>"); // tässä lisätään select-elementtiin nimi
+                    dialog.dialog("close"); // dialogi suljetaan
+
+                }
+                else {
+                    $("#varo").append("<p>Älä syötä samaa nimeä uudelleen!</p>"); // virheilmoitus
+                }
+            }
+
+            dialog = $("#oma_dialog").dialog({  // luodaan dialogi, joka avautuu sitten napista
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Tallenna": lisaa, // tämä kutsuu lisaa-funktiots
+                    "Peruuta": function () { // peruuta-napin toiminnallisuus
+                        $("#oma_dialog").dialog("close");
+                    }
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+        <button id="p_button">Lisää urheilija</button>
+
+        <div id="oma_dialog">
+            <p>Syötä nimi:</p>
+            <form>
+                <input type="text" name="jotain" id="jotain">
+            </form>
+        </div>
+        <form>
+            <select id="urheilijat"></select>
+        </form>
+        <p id="varo"></p>
+    </div>
+
+</body>
+
+</html>

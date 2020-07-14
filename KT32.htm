@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--32. Tee html-sivu, jossa käyttäjä voi valita syntymäpvm:n jQuery UI:n datepicker:n 
+    avulla (sallittu arvoalue on 1.1.1996 - 31.12.2015). 
+    Kun käyttäjä on valinnut pvm:n, näkyy valittu pvm <p>-elementissä 
+    (jossa lukee aluksi "Pvm:ää ei ole valittu") punaisella tekstillä. 
+    Datepicker:ssä täytyy näkyä pvm:t ja tekstit suomalaisessa muodossa.-->
+    <title>KT32</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+        $.datepicker.regional['fi'] = {
+            monthNames: ['Tammikuu', 'Helmikuu', 'Maaliskuu', 'Huhtikuu', 'Toukokuu', 'Kesäkuu', 'Heinäkuu', 'Elokuu', 'Syyskuu', 'Lokakuu', 'Marraskuu', 'Joulukuu'],
+            monthNamesShort: ['T', 'He', 'Ma', 'H', 'T', 'K', 'H', 'E', 'S', 'L', 'M', 'J'],
+            dayNames: ['Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai', 'Sunnuntai'],
+            dayNamesShort: ['MA', 'TI', 'KE', 'TO', 'PE', 'LA', 'SU'],
+            dayNamesMin: ['MA','TI','KE','TO','PE','LA','SU'],
+            dateFormat: 'dd/mm/yy'
+        };
+
+        $.datepicker.setDefaults($.datepicker.regional['fi']);
+        $(function () {
+            $("#kalenteri").datepicker({
+                format: 'dd/mm/yy',
+                useCurrent: false,
+                showClose: true,
+                minDate: '1/1/1996',
+                maxDate: '31/12/2015',
+
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <p>Date: <input type="text" id="kalenteri" placeholder="Pvm:ää ei valittu" style="color: red;"></p>
+
+</body>
+
+</html>
